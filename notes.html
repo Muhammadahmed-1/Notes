@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notes__Muhammad Ahmed</title>
+  <link rel="stylesheet" href="index.css" />
+  <style>
+    
+    /* Notes-page specific tweaks */
+    .header {
+      /* change path to 'images/header.jpeg' if that's where it is */
+      background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.55)), url('header.jpeg') center/cover no-repeat;
+      height: clamp(610px, 10vh, 420px);  /* responsive banner */
+      background-attachment: scroll;
+    }
+    .header__text-box {
+      position: relative;
+      top: 10%;
+      transform: none;
+      text-align: center;
+      text-shadow: 0 2px 6px rgba(0,0,0,.35);
+    }
+    .resource-anchors {
+      list-style: none;
+      padding: 0;
+      margin: .8rem 0 0;
+      display: inline-flex;
+      gap: 1rem;
+    }
+    .resource-anchors a {
+      padding: .4rem .8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(0,0,0,.25);
+      text-decoration: none;
+    }
+    /* ensure anchor jump doesn't hide titles under the banner */
+    #ece241, #mat291 { scroll-margin-top: 140px; }
+    .note-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .note-card iframe {
+      width: 100%;
+      height: min(66vh, 560px);
+      border: 0;
+      border-radius: 10px;
+      margin-top: .8rem;
+    }
+    .nav__brand {
+      margin-right: auto;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+    .nav__brand a { text-decoration: none; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="row">
+      <nav class="nav" role="navigation">
+        <div class="nav__brand"><a href="notes.html">Muhammad Ahmed — Notes</a></div>
+        <ul class="nav__items">
+          <li class="nav__item"><a href="#ece241" class="nav__link">ECE241</a></li>
+          <li class="nav__item"><a href="#mat291" class="nav__link">MAT291</a></li>
+            <li class="nav__item"><a href="#ece243" class="nav__link">ECE243</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="header__text-box row">
+      <h1>Course Notes</h1>
+      <ul class="resource-anchors">
+        <li><a href="#ece241">ECE241 Notes</a></li>
+        <li><a href="#mat291">MAT291 Notes</a></li>
+        <li><a href="#ece243">ECE243 Notes</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="resources">
+      <div class="row">
+        <h2>My Notes</h2>
+
+        <!-- ECE241 Notes -->
+        <div class="note-card" id="ece241">
+          <h3>ECE241: Digital Systems</h3>
+          <a class="btn btn--primary btn--small" 
+             href="https://drive.google.com/file/d/1VcPtZT-wYbGSgyZpALf2JMcJpJSxdHuu/view?usp=sharing" 
+             target="_blank" rel="noopener">Open in New Tab</a>
+          <iframe
+            src="https://drive.google.com/file/d/1VcPtZT-wYbGSgyZpALf2JMcJpJSxdHuu/preview"
+            title="ECE241 Notes"
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <!-- MAT291 Notes -->
+        <div class="note-card" id="mat291">
+          <h3>MAT291: Intro to Mathematical Physics (Calculus III)</h3>
+          <a class="btn btn--primary btn--small" 
+             href="https://drive.google.com/file/d/1wlAj4EkX1otQOJ5MAPoAQT6Mke3vBV2g/view?usp=sharing" 
+             target="_blank" rel="noopener">Open in New Tab</a>
+          <iframe
+            src="https://drive.google.com/file/d/1wlAj4EkX1otQOJ5MAPoAQT6Mke3vBV2g/preview"
+            title="MAT291 Notes"
+            loading="lazy">
+          </iframe>
+        </div>
+
+                <div class="note-card" id="ece243">
+          <h3>ECE243: Computer Organization</h3>
+          <a class="btn btn--primary btn--small" 
+             href="https://drive.google.com/file/d/1-5_bJJkzc_dO005QAm8mmPR-vig7nLIV/view?usp=sharing" 
+             target="_blank" rel="noopener">Open in New Tab</a>
+          <iframe
+            src="https://drive.google.com/file/d/1-5_bJJkzc_dO005QAm8mmPR-vig7nLIV/preview"
+            title="MAT291 Notes"
+            loading="lazy">
+          </iframe>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+   <!-- Disclaimer -->
+<section class="disclaimer">
+  <div class="row">
+    <p>
+      <strong>Note:</strong> These notes were created during my courses at the University of Toronto 
+      (primarily under the ECE, MAT, and APS departments). Some materials may include screenshots 
+      or small excerpts from lecture slides provided by instructors. All credit for original course 
+      content belongs to the respective professors; the summaries and organization here are my own.
+    </p>
+  </div>
+</section>
+
+  <footer class="footer">
+    <div class="row">
+      <p>&copy; 2025 Muhammad Ahmed</p>
+    </div>
+  </footer>
+</body>
+</html>
