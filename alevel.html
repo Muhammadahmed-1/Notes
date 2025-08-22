@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A-Level Notes — Muhammad Ahmed</title>
+  <link rel="stylesheet" href="index.css" />
+  <style>
+    .header {
+      background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.55)), url('header.jpeg') center/cover no-repeat;
+      height: clamp(610px, 10vh, 420px);
+      background-attachment: scroll;
+    }
+    .header__text-box {
+      position: relative;
+      top: 10%;
+      text-align: center;
+      text-shadow: 0 2px 6px rgba(0,0,0,.35);
+    }
+    .resource-anchors {
+      list-style: none;
+      padding: 0;
+      margin: .8rem 0 0;
+      display: inline-flex;
+      gap: 1rem;
+    }
+    .resource-anchors a {
+      padding: .4rem .8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(0,0,0,.25);
+      text-decoration: none;
+    }
+    .note-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .note-card iframe {
+      width: 100%;
+      height: min(66vh, 560px);
+      border: 0;
+      border-radius: 10px;
+      margin-top: .8rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="row">
+      <nav class="nav" role="navigation">
+        <div class="nav__brand"><a href="alevel.html">Muhammad Ahmed — A-Level Notes</a></div>
+        <ul class="nav__items">
+          <li class="nav__item"><a href="index.html" class="nav__link">University</a></li>
+          <li class="nav__item"><a href="alevel.html" class="nav__link">A-Level</a></li>
+          <li class="nav__item"><a href="igcse.html" class="nav__link">IGCSE</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header__text-box row">
+      <h1>A-Level Notes</h1>
+      <ul class="resource-anchors">
+        <li><a href="#math">Math</a></li>
+        <li><a href="#physics">Physics</a></li>
+        <li><a href="#chemistry">Chemistry</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <section class="resources">
+      <div class="row">
+        <h2>Subjects</h2>
+
+        <div class="note-card" id="math">
+          <h3>Mathematics</h3>
+          <a class="btn btn--primary btn--small" href="YOUR-MATH-LINK" target="_blank">Open in New Tab</a>
+          <iframe src="YOUR-MATH-LINK"></iframe>
+        </div>
+
+        <div class="note-card" id="physics">
+          <h3>Physics</h3>
+          <a class="btn btn--primary btn--small" href="YOUR-PHYSICS-LINK" target="_blank">Open in New Tab</a>
+          <iframe src="YOUR-PHYSICS-LINK"></iframe>
+        </div>
+
+        <div class="note-card" id="chemistry">
+          <h3>Chemistry</h3>
+          <a class="btn btn--primary btn--small" href="YOUR-CHEM-LINK" target="_blank">Open in New Tab</a>
+          <iframe src="YOUR-CHEM-LINK"></iframe>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Disclaimer -->
+  <section class="disclaimer">
+    <div class="row">
+      <p><strong>Note:</strong> These are personal study notes based on A-Level resources. All rights for original content belong to their respective authors and publishers.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="row"><p>&copy; 2025 Muhammad Ahmed</p></div>
+  </footer>
+</body>
+</html>

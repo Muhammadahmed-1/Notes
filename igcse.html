@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IGCSE Notes — Muhammad Ahmed</title>
+  <link rel="stylesheet" href="index.css" />
+  <style>
+    /* Banner matches your notes.html */
+    .header {
+      background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.55)), url('header.jpeg') center/cover no-repeat;
+      height: clamp(610px, 10vh, 420px);
+      background-attachment: scroll;
+    }
+    .header__text-box {
+      position: relative;
+      top: 10%;
+      text-align: center;
+      text-shadow: 0 2px 6px rgba(0,0,0,.35);
+    }
+    .resource-anchors {
+      list-style: none; padding: 0; margin: .8rem 0 0;
+      display: inline-flex; gap: 1rem;
+    }
+    .resource-anchors a {
+      padding: .4rem .8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(0,0,0,.25);
+      text-decoration: none;
+    }
+    /* Keep brand left, links right */
+    .nav { display: flex; justify-content: space-between; align-items: center; }
+    .nav__brand { margin-right: auto; font-weight: 700; letter-spacing: .2px; }
+    .nav__brand a { text-decoration: none; color: inherit; }
+
+    /* Card & iframe match your style */
+    .note-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .note-card iframe {
+      width: 100%;
+      height: min(66vh, 560px);
+      border: 0;
+      border-radius: 10px;
+      margin-top: .8rem;
+    }
+
+    /* Multi-PDF picker */
+    .pdf-picker {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      margin: .8rem 0 1rem;
+    }
+    .pdf-picker .btn {
+      padding: .6rem 1.2rem;
+      font-size: 1.4rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.18);
+    }
+    .pdf-picker .btn.active {
+      outline: 2px solid var(--pink);
+    }
+
+    /* Tiny helper (label row above buttons) */
+    .picker-label {
+      opacity: .85;
+      font-size: 1.5rem;
+      margin-bottom: .4rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="row">
+      <nav class="nav" role="navigation">
+        <div class="nav__brand"><a href="igcse.html">Muhammad Ahmed — IGCSE Notes</a></div>
+        <ul class="nav__items">
+          <li class="nav__item"><a href="index.html" class="nav__link">University</a></li>
+          <li class="nav__item"><a href="alevel.html" class="nav__link">A-Level</a></li>
+          <li class="nav__item"><a href="igcse.html" class="nav__link">IGCSE</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="header__text-box row">
+      <h1>IGCSE Notes</h1>
+      <ul class="resource-anchors">
+        <li><a href="#math">Math</a></li>
+        <li><a href="#physics">Physics</a></li>
+        <li><a href="#chemistry">Chemistry</a></li>
+        <li><a href="#accounting">Accounting</a></li>
+        <li><a href="#english">English</a></li>
+        <li><a href="#CS">CS</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <section class="resources">
+      <div class="row">
+        <h2>Subjects</h2>
+
+        <!-- ========== MATH ========== -->
+        <div class="note-card" id="math">
+          <h3>Mathematics</h3>
+
+          <div class="picker-label">Choose a PDF:</div>
+          <div class="pdf-picker" data-target="math">
+            <!-- data-preview = Google Drive preview link, data-view = public view link -->
+            <button class="btn btn--primary btn--small active"
+              data-preview="YOUR_MATH_PREVIEW_LINK_1"
+              data-view="YOUR_MATH_VIEW_LINK_1">Algebra – Core</button>
+
+            <button class="btn btn--primary btn--small"
+              data-preview="YOUR_MATH_PREVIEW_LINK_2"
+              data-view="YOUR_MATH_VIEW_LINK_2">Geometry – Notes</button>
+
+            <button class="btn btn--primary btn--small"
+              data-preview="YOUR_MATH_PREVIEW_LINK_3"
+              data-view="YOUR_MATH_VIEW_LINK_3">Past Paper Summary</button>
+          </div>
+
+          <a class="btn btn--primary btn--small js-open" href="YOUR_MATH_VIEW_LINK_1" target="_blank" rel="noopener">Open in New Tab</a>
+          <iframe class="js-frame" src="YOUR_MATH_PREVIEW_LINK_1" title="IGCSE Math Notes" loading="lazy"></iframe>
+        </div>
+
+        <!-- ========== PHYSICS ========== -->
+        <div class="note-card" id="physics">
+          <h3>Physics</h3>
+
+          <div class="picker-label">Choose a PDF:</div>
+          <div class="pdf-picker" data-target="physics">
+            <button class="btn btn--primary btn--small active"
+              data-preview="YOUR_PHYS_PREVIEW_LINK_1"
+              data-view="YOUR_PHYS_VIEW_LINK_1">Mechanics</button>
+
+            <button class="btn btn--primary btn--small"
+              data-preview="YOUR_PHYS_PREVIEW_LINK_2"
+              data-view="YOUR_PHYS_VIEW_LINK_2">Electricity</button>
+
+            <button class="btn btn--primary btn--small"
+              data-preview="YOUR_PHYS_PREVIEW_LINK_3"
+              data-view="YOUR_PHYS_VIEW_LINK_3">Waves</button>
+          </div>
+
+          <a class="btn btn--primary btn--small js-open" href="YOUR_PHYS_VIEW_LINK_1" target="_blank" rel="noopener">Open in New Tab</a>
+          <iframe class="js-frame" src="YOUR_PHYS_PREVIEW_LINK_1" title="IGCSE Physics Notes" loading="lazy"></iframe>
+        </div>
+
+        <!-- ========== CHEMISTRY ========== -->
+        <div class="note-card" id="chemistry">
+          <h3>Chemistry</h3>
+
+          <div class="picker-label">Choose a PDF:</div>
+          <div class="pdf-picker" data-target="chemistry">
+            <button class="btn btn--primary btn--small active"
+              data-preview="YOUR_CHEM_PREVIEW_LINK_1"
+              data-view="YOUR_CHEM_VIEW_LINK_1">Atomic Structure</button>
+
+            <button class="btn btn--primary btn--small"
+              data-preview="YOUR_CHEM_PREVIEW_LINK_2"
+              data-view="YOUR_CHEM_VIEW_LINK_2">Bonding</button>
+
+            <button class="btn btn--primary btn--small"
+              data-preview="YOUR_CHEM_PREVIEW_LINK_3"
+              data-view="YOUR_CHEM_VIEW_LINK_3">Organic – Quick Notes</button>
+          </div>
+
+          <a class="btn btn--primary btn--small js-open" href="YOUR_CHEM_VIEW_LINK_1" target="_blank" rel="noopener">Open in New Tab</a>
+          <iframe class="js-frame" src="YOUR_CHEM_PREVIEW_LINK_1" title="IGCSE Chemistry Notes" loading="lazy"></iframe>
+        </div>
+
+        <!-- ========== BIOLOGY ========== -->
+        <div class="note-card" id="bio">
+          <h3>Accounting</h3>
+
+          <div class="picker-label">Choose a PDF:</div>
+          <div class="pdf-picker" data-target="bio">
+            <button class="btn btn--primary btn--small active"
+              data-preview="YOUR_BIO_PREVIEW_LINK_1"
+              data-view="YOUR_BIO_VIEW_LINK_1">Cells & Enzymes</button>
+
+            <button class="btn btn--primary btn--small"
+              data-preview="YOUR_BIO_PREVIEW_LINK_2"
+              data-view="YOUR_BIO_VIEW_LINK_2">Human Physiology</button>
+
+            <button class="btn btn--primary btn--small"
+              data-preview="YOUR_BIO_PREVIEW_LINK_3"
+              data-view="YOUR_BIO_VIEW_LINK_3">Genetics</button>
+          </div>
+
+          <a class="btn btn--primary btn--small js-open" href="YOUR_BIO_VIEW_LINK_1" target="_blank" rel="noopener">Open in New Tab</a>
+          <iframe class="js-frame" src="YOUR_BIO_PREVIEW_LINK_1" title="IGCSE Biology Notes" loading="lazy"></iframe>
+        </div>
+
+        <!-- ========== ENGLISH ========== -->
+        <div class="note-card" id="english">
+          <h3>English</h3>
+
+          <div class="picker-label">Choose a PDF:</div>
+          <div class="pdf-picker" data-target="english">
+            <button class="btn btn--primary btn--small active"
+              data-preview="YOUR_ENG_PREVIEW_LINK_1"
+              data-view="YOUR_ENG_VIEW_LINK_1">Language – Summary</button>
+
+            <button class="btn btn--primary btn--small"
+              data-preview="YOUR_ENG_PREVIEW_LINK_2"
+              data-view="YOUR_ENG_VIEW_LINK_2">Essay Techniques</button>
+
+            <button class="btn btn--primary btn--small"
+              data-preview="YOUR_ENG_PREVIEW_LINK_3"
+              data-view="YOUR_ENG_VIEW_LINK_3">Past Paper Planner</button>
+          </div>
+
+          <a class="btn btn--primary btn--small js-open" href="YOUR_ENG_VIEW_LINK_1" target="_blank" rel="noopener">Open in New Tab</a>
+          <iframe class="js-frame" src="YOUR_ENG_PREVIEW_LINK_1" title="IGCSE English Notes" loading="lazy"></iframe>
+        </div>
+
+        <!-- ========== ICT ========== -->
+        <div class="note-card" id="CS">
+          <h3>CS</h3>
+
+          <div class="picker-label">Choose a PDF:</div>
+          <div class="pdf-picker" data-target="ict">
+            <button class="btn btn--primary btn--small active"
+              data-preview="YOUR_ICT_PREVIEW_LINK_1"
+              data-view="YOUR_ICT_VIEW_LINK_1">Theory – Notes</button>
+
+            <button class="btn btn--primary btn--small"
+              data-preview="YOUR_ICT_PREVIEW_LINK_2"
+              data-view="YOUR_ICT_VIEW_LINK_2">Practical – Cheatsheet</button>
+
+            <button class="btn btn--primary btn--small"
+              data-preview="YOUR_ICT_PREVIEW_LINK_3"
+              data-view="YOUR_ICT_VIEW_LINK_3">Command Reference</button>
+          </div>
+
+          <a class="btn btn--primary btn--small js-open" href="YOUR_ICT_VIEW_LINK_1" target="_blank" rel="noopener">Open in New Tab</a>
+          <iframe class="js-frame" src="YOUR_ICT_PREVIEW_LINK_1" title="IGCSE ICT Notes" loading="lazy"></iframe>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Disclaimer -->
+  <section class="disclaimer">
+    <div class="row">
+      <p>
+        <strong>Note:</strong> These are my personal study summaries based on IGCSE resources.
+        All rights for original content belong to their respective authors and publishers.
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="row"><p>&copy; 2025 Muhammad Ahmed</p></div>
+  </footer>
+
+  <!-- Minimal JS to switch previews per subject -->
+  <script>
+    // For each subject card, wire up its buttons to update the iframe + open link
+    document.querySelectorAll('.pdf-picker').forEach(function(picker){
+      const card = picker.closest('.note-card');
+      const frame = card.querySelector('.js-frame');
+      const openBtn = card.querySelector('.js-open');
+
+      picker.addEventListener('click', function(e){
+        const btn = e.target.closest('button[data-preview][data-view]');
+        if(!btn) return;
+
+        // active state
+        picker.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // swap preview + open link
+        frame.src = btn.getAttribute('data-preview');
+        openBtn.href = btn.getAttribute('data-view');
+      });
+    });
+  </script>
+</body>
+</html>
