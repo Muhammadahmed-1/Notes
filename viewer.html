@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF Viewer | Muhammad Ahmed Notes</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" role="navigation">
+      <div class="nav__brand">
+        <a href="index.html">Muhammad Ahmed — Notes</a>
+      </div>
+
+      <ul class="nav__items">
+        <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+        <li class="nav__item"><a href="index.html#university" class="nav__link">University Notes</a></li>
+        <li class="nav__item"><a href="alevel.html" class="nav__link">A-Level Notes</a></li>
+        <li class="nav__item"><a href="igcse.html" class="nav__link">IGCSE Notes</a></li>
+        <li class="nav__item">
+          <a href="https://github.com/Muhammadahmed-1/Notes" target="_blank" rel="noopener" class="nav__link">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="viewer-page">
+    <div class="viewer-header">
+      <a href="index.html" class="back-link">← Back to Notes</a>
+      <a id="downloadLink" class="btn btn--secondary" download>Download PDF</a>
+    </div>
+
+    <iframe id="pdfFrame" class="pdf-frame" title="PDF Viewer"></iframe>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get("file");
+
+    const pdfFrame = document.getElementById("pdfFrame");
+    const downloadLink = document.getElementById("downloadLink");
+
+    if (file && file.endsWith(".pdf")) {
+      pdfFrame.src = file;
+      downloadLink.href = file;
+    } else {
+      document.querySelector(".viewer-page").innerHTML =
+        "<h1>PDF not found</h1><p>The requested note could not be loaded.</p>";
+    }
+  </script>
+</body>
+</html>
