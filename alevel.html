@@ -1,115 +1,256 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A-Level Notes — Muhammad Ahmed</title>
+  <meta name="description" content="A-Level notes by Muhammad Ahmed — Mathematics, Physics, Chemistry." />
   <link rel="stylesheet" href="index.css" />
-  <style>
-    .header {
-      background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.55)), url('header.jpeg') center/cover no-repeat;
-      height: clamp(610px, 10vh, 420px);
-      background-attachment: scroll;
-    }
-    .header__text-box {
-      position: relative;
-      top: 10%;
-      text-align: center;
-      text-shadow: 0 2px 6px rgba(0,0,0,.35);
-    }
-    .resource-anchors {
-      list-style: none;
-      padding: 0;
-      margin: .8rem 0 0;
-      display: inline-flex;
-      gap: 1rem;
-    }
-    .resource-anchors a {
-      padding: .4rem .8rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.25);
-      background: rgba(0,0,0,.25);
-      text-decoration: none;
-    }
-    .note-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 14px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-    }
-    .note-card iframe {
-      width: 100%;
-      height: min(66vh, 560px);
-      border: 0;
-      border-radius: 10px;
-      margin-top: .8rem;
-    }
-  </style>
 </head>
-<body>
-  <!-- Header -->
-  <header class="header">
+
+<body class="page-alevel">
+
+  <!-- ===================== NAVBAR ===================== -->
+  <div class="nav-wrapper" id="navWrapper">
     <div class="row">
-      <nav class="nav" role="navigation">
-        <div class="nav__brand"><a href="alevel.html">Muhammad Ahmed — A-Level Notes</a></div>
-        <ul class="nav__items">
-          <li class="nav__item"><a href="index.html" class="nav__link">University</a></li>
-          <li class="nav__item"><a href="alevel.html" class="nav__link">A-Level</a></li>
-          <li class="nav__item"><a href="igcse.html" class="nav__link">IGCSE</a></li>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+
+        <a href="index.html" class="nav__brand">
+          <span class="nav__brand-dot" aria-hidden="true"></span>
+          Muhammad Ahmed
+        </a>
+
+        <ul class="nav__items" id="navItems">
+          <li><a href="index.html"  class="nav__link">Home</a></li>
+          <li><a href="index.html"  class="nav__link">University</a></li>
+          <li><a href="alevel.html" class="nav__link active">A-Level</a></li>
+          <li><a href="igcse.html"  class="nav__link">IGCSE</a></li>
+          <li><a href="index.html#about" class="nav__link">About</a></li>
+          <li>
+            <a href="https://github.com/Muhammadahmed-1/Notes"
+               class="nav__link nav__link--github"
+               target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.461-1.11-1.461-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.337 4.687-4.565 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.742 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+              </svg>
+              GitHub
+            </a>
+          </li>
         </ul>
+
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
       </nav>
     </div>
-    <div class="header__text-box row">
-      <h1>A-Level Notes</h1>
-      <ul class="resource-anchors">
-        <li><a href="#math">Math</a></li>
-        <li><a href="#physics">Physics</a></li>
-        <li><a href="#chemistry">Chemistry</a></li>
-      </ul>
+  </div>
+
+  <!-- ===================== HERO HEADER ===================== -->
+  <header class="header header--alevel">
+    <div class="row">
+      <div class="header__content">
+
+        <p class="header__eyebrow anim-fade-up">Cambridge · Edexcel</p>
+
+        <h1 class="header__title anim-fade-up anim-delay-1">
+          A-Level Notes
+        </h1>
+
+        <p class="header__subtitle anim-fade-up anim-delay-2">
+          Personal study notes for A-Level Mathematics, Physics, and Chemistry.
+          Swap in your own PDFs using the links below.
+        </p>
+
+        <!-- Quick-jump anchors -->
+        <ul class="header__jumps anim-fade-up anim-delay-3" aria-label="Jump to subject">
+          <li><a href="#math"><span class="jump-num">01</span> Maths</a></li>
+          <li><a href="#physics"><span class="jump-num">02</span> Physics</a></li>
+          <li><a href="#chemistry"><span class="jump-num">03</span> Chemistry</a></li>
+          <!-- ADD MORE A-LEVEL SUBJECTS HERE — duplicate the <li> and update href + label -->
+        </ul>
+
+      </div>
     </div>
   </header>
 
-  <!-- Main -->
+  <!-- ===================== MAIN ===================== -->
   <main>
     <section class="resources">
       <div class="row">
-        <h2>Subjects</h2>
 
+        <!-- Section heading -->
+        <div class="section-heading">
+          <h2>Subjects</h2>
+          <p>Open any PDF in a new tab or read inline. Add your own files in the <code style="font-family:var(--font-mono);font-size:1.3rem;color:var(--accent);">pdfs/</code> folder.</p>
+        </div>
+
+        <!-- ─── MATHEMATICS ─── -->
         <div class="note-card" id="math">
-          <h3>Mathematics</h3>
-          <a class="btn btn--primary btn--small" href="YOUR-MATH-LINK" target="_blank">Open in New Tab</a>
-          <iframe src="YOUR-MATH-LINK"></iframe>
+          <div class="note-card__header">
+            <div>
+              <div class="note-card__meta" style="margin-bottom:0.6rem;">
+                <span class="note-card__badge">A-Level</span>
+              </div>
+              <h3>Mathematics</h3>
+            </div>
+            <!-- UPDATE: replace YOUR-MATH-PDF.pdf with your actual file path -->
+            <a class="btn btn--secondary btn--small"
+               href="pdfs/YOUR-MATH-PDF.pdf"
+               target="_blank" rel="noopener">
+              ↗ Open PDF
+            </a>
+          </div>
+
+          <p class="note-card__desc">
+            Pure mathematics, statistics, and mechanics — covering the full A-Level syllabus.
+          </p>
+
+          <!-- UPDATE: replace YOUR-MATH-PDF.pdf with your actual file path -->
+          <iframe
+            src="pdfs/YOUR-MATH-PDF.pdf"
+            title="A-Level Mathematics Notes"
+            loading="lazy">
+          </iframe>
+
+          <!-- ADD MORE MATH PDFs HERE — duplicate the <iframe> above and add another button -->
         </div>
 
+        <!-- ─── PHYSICS ─── -->
         <div class="note-card" id="physics">
-          <h3>Physics</h3>
-          <a class="btn btn--primary btn--small" href="YOUR-PHYSICS-LINK" target="_blank">Open in New Tab</a>
-          <iframe src="YOUR-PHYSICS-LINK"></iframe>
+          <div class="note-card__header">
+            <div>
+              <div class="note-card__meta" style="margin-bottom:0.6rem;">
+                <span class="note-card__badge">A-Level</span>
+              </div>
+              <h3>Physics</h3>
+            </div>
+            <!-- UPDATE: replace YOUR-PHYSICS-PDF.pdf with your actual file path -->
+            <a class="btn btn--secondary btn--small"
+               href="pdfs/YOUR-PHYSICS-PDF.pdf"
+               target="_blank" rel="noopener">
+              ↗ Open PDF
+            </a>
+          </div>
+
+          <p class="note-card__desc">
+            Mechanics, electricity, waves, particle physics, and astrophysics.
+          </p>
+
+          <iframe
+            src="pdfs/YOUR-PHYSICS-PDF.pdf"
+            title="A-Level Physics Notes"
+            loading="lazy">
+          </iframe>
+
+          <!-- ADD MORE PHYSICS PDFs HERE -->
         </div>
 
+        <!-- ─── CHEMISTRY ─── -->
         <div class="note-card" id="chemistry">
-          <h3>Chemistry</h3>
-          <a class="btn btn--primary btn--small" href="YOUR-CHEM-LINK" target="_blank">Open in New Tab</a>
-          <iframe src="YOUR-CHEM-LINK"></iframe>
+          <div class="note-card__header">
+            <div>
+              <div class="note-card__meta" style="margin-bottom:0.6rem;">
+                <span class="note-card__badge">A-Level</span>
+              </div>
+              <h3>Chemistry</h3>
+            </div>
+            <!-- UPDATE: replace YOUR-CHEM-PDF.pdf with your actual file path -->
+            <a class="btn btn--secondary btn--small"
+               href="pdfs/YOUR-CHEM-PDF.pdf"
+               target="_blank" rel="noopener">
+              ↗ Open PDF
+            </a>
+          </div>
+
+          <p class="note-card__desc">
+            Physical, inorganic, and organic chemistry — reaction mechanisms and data analysis.
+          </p>
+
+          <iframe
+            src="pdfs/YOUR-CHEM-PDF.pdf"
+            title="A-Level Chemistry Notes"
+            loading="lazy">
+          </iframe>
+
+          <!-- ADD MORE CHEMISTRY PDFs HERE -->
         </div>
+
+        <!-- ─── ADD NEW A-LEVEL SUBJECTS BELOW THIS COMMENT ─── -->
+        <!--
+          TEMPLATE — copy, paste below, and fill in the blanks:
+
+          <div class="note-card" id="SUBJECT">
+            <div class="note-card__header">
+              <div>
+                <div class="note-card__meta" style="margin-bottom:0.6rem;">
+                  <span class="note-card__badge">A-Level</span>
+                </div>
+                <h3>Subject Name</h3>
+              </div>
+              <a class="btn btn--secondary btn--small"
+                 href="pdfs/YOUR-FILE.pdf"
+                 target="_blank" rel="noopener">
+                ↗ Open PDF
+              </a>
+            </div>
+            <p class="note-card__desc">Short description.</p>
+            <iframe
+              src="pdfs/YOUR-FILE.pdf"
+              title="A-Level Subject Notes"
+              loading="lazy">
+            </iframe>
+          </div>
+
+          Also add to the header__jumps list at the top:
+          <li><a href="#SUBJECT"><span class="jump-num">04</span> Subject</a></li>
+        -->
 
       </div>
     </section>
   </main>
 
-  <!-- Disclaimer -->
+  <!-- ===================== DISCLAIMER ===================== -->
   <section class="disclaimer">
     <div class="row">
-      <p><strong>Note:</strong> These are personal study notes based on A-Level resources. All rights for original content belong to their respective authors and publishers.</p>
+      <p>
+        <strong>Note:</strong> These are personal study summaries based on A-Level resources.
+        All rights for original content belong to their respective authors and publishers.
+      </p>
     </div>
   </section>
 
+  <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
-    <div class="row"><p>&copy; 2025 Muhammad Ahmed</p></div>
+    <div class="row">
+      <div class="footer__inner">
+        <p class="footer__copy">&copy; 2025 Muhammad Ahmed</p>
+        <ul class="footer__links">
+          <li><a href="index.html">University</a></li>
+          <li><a href="igcse.html">IGCSE</a></li>
+          <li><a href="https://github.com/Muhammadahmed-1/Notes" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
   </footer>
+
+  <!-- ===================== JS: Nav toggle ===================== -->
+  <script>
+    const toggle  = document.getElementById('navToggle');
+    const wrapper = document.getElementById('navWrapper');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = wrapper.classList.toggle('nav--open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    document.querySelectorAll('.nav__link').forEach(link => {
+      link.addEventListener('click', () => {
+        wrapper.classList.remove('nav--open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
 </body>
 </html>

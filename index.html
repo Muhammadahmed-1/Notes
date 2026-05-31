@@ -1,166 +1,118 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Notes — Muhammad Ahmed</title>
+  <meta name="description" content="Course notes by Muhammad Ahmed — University of Toronto (ECE, APS, MAT), A-Level, and IGCSE." />
   <link rel="stylesheet" href="index.css" />
-  <style>
-    .header {
-      background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.55)), url('header.jpeg') center/cover no-repeat;
-      height: clamp(220px, 38vh, 380px);
-      background-attachment: scroll;
-    }
-    .header__text-box {
-      position: relative;
-      top: 10%;
-      transform: none;
-      text-align: center;
-      text-shadow: 0 2px 6px rgba(0,0,0,.35);
-    }
-    .resource-anchors {
-      list-style: none;
-      padding: 0;
-      margin: .8rem 0 0;
-      display: inline-flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .resource-anchors a {
-      padding: .4rem .9rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.3);
-      background: rgba(0,0,0,.3);
-      text-decoration: none;
-      font-size: 1.5rem;
-      transition: background .2s, border-color .2s;
-    }
-    .resource-anchors a:hover {
-      background: rgba(0,32,91,.6);
-      border-color: rgba(255,255,255,.6);
-    }
-
-    /* Scroll offset so anchor jumps clear the nav */
-    #aps360, #ece241, #mat291, #ece243 {
-      scroll-margin-top: 120px;
-    }
-
-    /* ── Note cards ── */
-    .note-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 14px;
-      padding: 2rem 2rem 2.4rem;
-      margin-bottom: 2.4rem;
-      transition: border-color .25s;
-    }
-    .note-card:hover {
-      border-color: rgba(0,32,91,.6);
-    }
-    .note-card h3 {
-      margin: 0 0 1rem;
-      font-size: 2.6rem;
-    }
-
-    /* ── Two-column PDF layout (APS360) ── */
-    .note-card__pdfs {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.4rem;
-    }
-    @media (max-width: 700px) {
-      .note-card__pdfs { grid-template-columns: 1fr; }
-    }
-    .note-card__pdf-item { display: flex; flex-direction: column; gap: .6rem; }
-
-    /* ── PDF embed ── */
-    .note-card iframe {
-      width: 100%;
-      height: min(62vh, 520px);
-      border: 0;
-      border-radius: 10px;
-      background: #111;
-    }
-
-    /* ── Open-in-tab button ── */
-    .btn--pdf {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      padding: .55rem 1.4rem;
-      font-size: 1.4rem;
-      font-weight: 600;
-      border-radius: 999px;
-      border: 1.5px solid rgba(0,32,91,.8);
-      background: rgba(0,32,91,.25);
-      color: #fff;
-      text-decoration: none;
-      transition: background .2s, transform .15s;
-      width: fit-content;
-    }
-    .btn--pdf:hover {
-      background: rgba(0,32,91,.7);
-      transform: translateY(-1px);
-    }
-
-    /* ── Nav brand ── */
-    .nav__brand { margin-right: auto; font-weight: 700; }
-    .nav__brand a { text-decoration: none; color: inherit; }
-
-    /* ── Disclaimer ── */
-    .disclaimer {
-      background: rgba(255,255,255,0.03);
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 1.2rem 0;
-      font-size: 1.4rem;
-      color: rgba(255,255,255,.55);
-    }
-    .disclaimer strong { color: rgba(255,255,255,.75); }
-  </style>
 </head>
+
 <body>
 
-  <!-- ═══════════ HEADER ═══════════ -->
-  <header class="header">
+  <!-- ===================== NAVBAR ===================== -->
+  <div class="nav-wrapper" id="navWrapper">
     <div class="row">
-      <nav class="nav" role="navigation">
-        <div class="nav__brand"><a href="index.html">Muhammad Ahmed</a></div>
-        <ul class="nav__items">
-          <li class="nav__item"><a href="#aps360"  class="nav__link">APS360</a></li>
-          <li class="nav__item"><a href="#ece241"  class="nav__link">ECE241</a></li>
-          <li class="nav__item"><a href="#mat291"  class="nav__link">MAT291</a></li>
-          <li class="nav__item"><a href="#ece243"  class="nav__link">ECE243</a></li>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+
+        <!-- Brand / Logo -->
+        <a href="index.html" class="nav__brand">
+          <span class="nav__brand-dot" aria-hidden="true"></span>
+          Muhammad Ahmed
+        </a>
+
+        <!-- Nav links -->
+        <ul class="nav__items" id="navItems">
+          <li><a href="index.html"  class="nav__link active">Home</a></li>
+          <li><a href="index.html"  class="nav__link">University</a></li>
+          <li><a href="alevel.html" class="nav__link">A-Level</a></li>
+          <li><a href="igcse.html"  class="nav__link">IGCSE</a></li>
+          <li><a href="#about"      class="nav__link">About</a></li>
+          <li>
+            <a href="https://github.com/Muhammadahmed-1/Notes"
+               class="nav__link nav__link--github"
+               target="_blank" rel="noopener">
+              <!-- GitHub SVG icon (inline, no external dep) -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.461-1.11-1.461-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.337 4.687-4.565 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.742 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+              </svg>
+              GitHub
+            </a>
+          </li>
         </ul>
+
+        <!-- Mobile hamburger -->
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
       </nav>
     </div>
+  </div>
 
-    <div class="header__text-box row">
-      <h1>Course Notes</h1>
-      <ul class="resource-anchors">
-        <li><a href="#aps360">APS360 — Deep Learning</a></li>
-        <li><a href="#ece241">ECE241 — Digital Systems</a></li>
-        <li><a href="#mat291">MAT291 — Calculus III</a></li>
-        <li><a href="#ece243">ECE243 — Computer Org.</a></li>
-      </ul>
+  <!-- ===================== HERO HEADER ===================== -->
+  <header class="header header--uni">
+    <div class="row">
+      <div class="header__content">
+
+        <p class="header__eyebrow anim-fade-up">University of Toronto · ECE</p>
+
+        <h1 class="header__title anim-fade-up anim-delay-1">
+          Course Notes
+        </h1>
+
+        <p class="header__subtitle anim-fade-up anim-delay-2">
+          Personal handwritten and typed notes from my undergraduate courses —
+          APS360, ECE241, MAT291, and ECE243.
+        </p>
+
+        <!-- Quick-jump anchors -->
+        <ul class="header__jumps anim-fade-up anim-delay-3" aria-label="Jump to course">
+          <li><a href="#aps360"><span class="jump-num">01</span> APS360</a></li>
+          <li><a href="#ece241"><span class="jump-num">02</span> ECE241</a></li>
+          <li><a href="#mat291"><span class="jump-num">03</span> MAT291</a></li>
+          <li><a href="#ece243"><span class="jump-num">04</span> ECE243</a></li>
+          <!-- ADD MORE COURSES HERE — duplicate a <li> and update the anchor + label -->
+        </ul>
+
+      </div>
     </div>
   </header>
 
-  <!-- ═══════════ NOTES ═══════════ -->
+  <!-- ===================== MAIN ===================== -->
   <main>
     <section class="resources">
       <div class="row">
-        <h2>My Notes</h2>
 
-        <!-- ── APS360 ── -->
+        <!-- Section heading -->
+        <div class="section-heading">
+          <h2>University Notes</h2>
+          <p>Click any button to open the PDF in a new tab, or read inline below.</p>
+        </div>
+
+        <!-- ─── APS360 ─── -->
         <div class="note-card" id="aps360">
-          <h3>APS360 — Deep Learning</h3>
-          <div class="note-card__pdfs">
-            <div class="note-card__pdf-item">
-              <a class="btn--pdf" href="pdfs/aps360_deeplearning_notes_part1.pdf" target="_blank" rel="noopener">
+          <div class="note-card__header">
+            <div>
+              <div class="note-card__meta" style="margin-bottom:0.6rem;">
+                <span class="note-card__badge">APS360</span>
+              </div>
+              <h3>Deep Learning</h3>
+            </div>
+          </div>
+
+          <p class="note-card__desc">
+            Neural networks, CNNs, RNNs, transformers, and more. Split across two parts.
+          </p>
+
+          <!-- Two PDFs side by side -->
+          <div class="pdf-split">
+            <!-- PDF 1 -->
+            <div class="pdf-split__item">
+              <span class="pdf-split__label">Part 1</span>
+              <a class="btn btn--primary btn--small"
+                 href="pdfs/aps360_deeplearning_notes_part1.pdf"
+                 target="_blank" rel="noopener">
                 ↗ Open Part 1
               </a>
               <iframe
@@ -169,8 +121,13 @@
                 loading="lazy">
               </iframe>
             </div>
-            <div class="note-card__pdf-item">
-              <a class="btn--pdf" href="pdfs/aps360_deeplearning_notes_part2.pdf" target="_blank" rel="noopener">
+
+            <!-- PDF 2 -->
+            <div class="pdf-split__item">
+              <span class="pdf-split__label">Part 2</span>
+              <a class="btn btn--primary btn--small"
+                 href="pdfs/aps360_deeplearning_notes_part2.pdf"
+                 target="_blank" rel="noopener">
                 ↗ Open Part 2
               </a>
               <iframe
@@ -180,63 +137,271 @@
               </iframe>
             </div>
           </div>
+
+          <!-- ADD MORE APS360 PDFs HERE — duplicate a .pdf-split__item inside .pdf-split -->
         </div>
 
-        <!-- ── ECE241 ── -->
+        <!-- ─── ECE241 ─── -->
         <div class="note-card" id="ece241">
-          <h3>ECE241 — Digital Systems</h3>
-          <a class="btn--pdf" href="pdfs/ECE241Lectures.pdf" target="_blank" rel="noopener">↗ Open PDF</a>
+          <div class="note-card__header">
+            <div>
+              <div class="note-card__meta" style="margin-bottom:0.6rem;">
+                <span class="note-card__badge">ECE241</span>
+              </div>
+              <h3>Digital Systems</h3>
+            </div>
+            <a class="btn btn--secondary btn--small"
+               href="pdfs/ECE241Lectures.pdf"
+               target="_blank" rel="noopener">
+              ↗ Open PDF
+            </a>
+          </div>
+
+          <p class="note-card__desc">
+            Boolean algebra, combinational & sequential circuits, FSMs, and HDL.
+          </p>
+
           <iframe
             src="pdfs/ECE241Lectures.pdf"
             title="ECE241 Notes"
             loading="lazy">
           </iframe>
+
+          <!-- ADD MORE ECE241 PDFs HERE — duplicate the <iframe> and add a matching <a> button above -->
         </div>
 
-        <!-- ── MAT291 ── -->
+        <!-- ─── MAT291 ─── -->
         <div class="note-card" id="mat291">
-          <h3>MAT291 — Intro to Mathematical Physics (Calculus III)</h3>
-          <a class="btn--pdf" href="pdfs/MAT291Lectures.pdf" target="_blank" rel="noopener">↗ Open PDF</a>
+          <div class="note-card__header">
+            <div>
+              <div class="note-card__meta" style="margin-bottom:0.6rem;">
+                <span class="note-card__badge">MAT291</span>
+              </div>
+              <h3>Intro to Mathematical Physics — Calculus III</h3>
+            </div>
+            <a class="btn btn--secondary btn--small"
+               href="pdfs/MAT291Lectures.pdf"
+               target="_blank" rel="noopener">
+              ↗ Open PDF
+            </a>
+          </div>
+
+          <p class="note-card__desc">
+            Multivariable calculus, vector fields, line integrals, and theorems of Green, Stokes, and Gauss.
+          </p>
+
           <iframe
             src="pdfs/MAT291Lectures.pdf"
             title="MAT291 Notes"
             loading="lazy">
           </iframe>
+
+          <!-- ADD MORE MAT291 PDFs HERE -->
         </div>
 
-        <!-- ── ECE243 ── -->
+        <!-- ─── ECE243 ─── -->
         <div class="note-card" id="ece243">
-          <h3>ECE243 — Computer Organization</h3>
-          <a class="btn--pdf" href="pdfs/ECE243_computerorganization_notes.pdf" target="_blank" rel="noopener">↗ Open PDF</a>
+          <div class="note-card__header">
+            <div>
+              <div class="note-card__meta" style="margin-bottom:0.6rem;">
+                <span class="note-card__badge">ECE243</span>
+              </div>
+              <h3>Computer Organization</h3>
+            </div>
+            <a class="btn btn--secondary btn--small"
+               href="pdfs/ECE243_computerorganization_notes.pdf"
+               target="_blank" rel="noopener">
+              ↗ Open PDF
+            </a>
+          </div>
+
+          <p class="note-card__desc">
+            ARM assembly, memory hierarchy, caches, I/O, and processor microarchitecture.
+          </p>
+
           <iframe
             src="pdfs/ECE243_computerorganization_notes.pdf"
             title="ECE243 Notes"
             loading="lazy">
           </iframe>
+
+          <!-- ADD MORE ECE243 PDFs HERE -->
         </div>
+
+        <!-- ─── ADD NEW COURSES BELOW THIS COMMENT ─── -->
+        <!--
+          TEMPLATE — copy and paste below, fill in the blanks:
+
+          <div class="note-card" id="COURSECODE">
+            <div class="note-card__header">
+              <div>
+                <div class="note-card__meta" style="margin-bottom:0.6rem;">
+                  <span class="note-card__badge">COURSECODE</span>
+                </div>
+                <h3>Course Title Here</h3>
+              </div>
+              <a class="btn btn--secondary btn--small"
+                 href="pdfs/YOUR_FILE.pdf"
+                 target="_blank" rel="noopener">
+                ↗ Open PDF
+              </a>
+            </div>
+            <p class="note-card__desc">Short description of the course.</p>
+            <iframe
+              src="pdfs/YOUR_FILE.pdf"
+              title="COURSECODE Notes"
+              loading="lazy">
+            </iframe>
+          </div>
+        -->
 
       </div>
     </section>
+
+    <!-- ===================== ABOUT SECTION ===================== -->
+    <section class="about" id="about">
+      <div class="row">
+        <div class="about__grid">
+
+          <!-- Left column -->
+          <div>
+            <h2 class="about__title">About These Notes</h2>
+            <p class="about__text">
+              I'm a second-year ECE student at the University of Toronto. I created this site
+              to share my notes publicly — whether you're in the same course, reviewing
+              material, or just curious.
+            </p>
+            <p class="about__text">
+              Notes span three levels: university courses at UofT, A-Level subjects,
+              and IGCSE. Everything is handwritten or typed during lectures and
+              cleaned up afterwards.
+            </p>
+            <div class="about__tags">
+              <span class="tag">ECE · APS · MAT</span>
+              <span class="tag">Embedded Systems</span>
+              <span class="tag">Signal Processing</span>
+              <span class="tag">Deep Learning</span>
+              <span class="tag">University of Toronto</span>
+            </div>
+          </div>
+
+          <!-- Right column — stats -->
+          <div class="about__stats">
+            <div class="stat-card">
+              <div class="stat-card__value">4</div>
+              <div class="stat-card__label">UofT Courses</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__value">6+</div>
+              <div class="stat-card__label">PDFs Available</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__value">3</div>
+              <div class="stat-card__label">Levels Covered</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__value">∞</div>
+              <div class="stat-card__label">Coffee Consumed</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Browse other sections -->
+    <section class="section-cards">
+      <div class="row">
+        <div class="section-heading">
+          <h2>Browse by Level</h2>
+          <p>Notes organised from pre-university through undergraduate study.</p>
+        </div>
+
+        <div class="section-cards__grid">
+
+          <!-- University card -->
+          <a href="index.html" class="section-card">
+            <div class="section-card__icon">🎓</div>
+            <span class="section-card__label">UofT</span>
+            <h3 class="section-card__title">University Notes</h3>
+            <p class="section-card__desc">
+              APS360, ECE241, MAT291, ECE243 — and more courses to come.
+            </p>
+            <span class="section-card__arrow">View notes →</span>
+          </a>
+
+          <!-- A-Level card -->
+          <a href="alevel.html" class="section-card">
+            <div class="section-card__icon">📐</div>
+            <span class="section-card__label">A-Level</span>
+            <h3 class="section-card__title">A-Level Notes</h3>
+            <p class="section-card__desc">
+              Mathematics, Physics, Chemistry — Cambridge & Edexcel materials.
+            </p>
+            <span class="section-card__arrow">View notes →</span>
+          </a>
+
+          <!-- IGCSE card -->
+          <a href="igcse.html" class="section-card">
+            <div class="section-card__icon">📚</div>
+            <span class="section-card__label">IGCSE</span>
+            <h3 class="section-card__title">IGCSE Notes</h3>
+            <p class="section-card__desc">
+              Math, Physics, Chemistry, Accounting, English, and CS — all subjects.
+            </p>
+            <span class="section-card__arrow">View notes →</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- ═══════════ DISCLAIMER ═══════════ -->
+  <!-- ===================== DISCLAIMER ===================== -->
   <section class="disclaimer">
     <div class="row">
       <p>
         <strong>Note:</strong> These notes were created during my courses at the University of Toronto
-        (ECE, MAT, and APS departments). Some materials may include excerpts from lecture slides.
-        All credit for original course content belongs to the respective professors;
-        the summaries and organization here are my own.
+        (ECE, MAT, and APS departments). Some materials may include excerpts from lecture slides
+        provided by instructors. All credit for original course content belongs to the respective professors;
+        the summaries and organisation here are my own.
       </p>
     </div>
   </section>
 
-  <!-- ═══════════ FOOTER ═══════════ -->
+  <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
     <div class="row">
-      <p>&copy; 2025 Muhammad Ahmed</p>
+      <div class="footer__inner">
+        <p class="footer__copy">&copy; 2025 Muhammad Ahmed</p>
+        <ul class="footer__links">
+          <li><a href="https://github.com/Muhammadahmed-1/Notes" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="alevel.html">A-Level</a></li>
+          <li><a href="igcse.html">IGCSE</a></li>
+        </ul>
+      </div>
     </div>
   </footer>
+
+  <!-- ===================== JS: Nav toggle ===================== -->
+  <script>
+    const toggle  = document.getElementById('navToggle');
+    const wrapper = document.getElementById('navWrapper');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = wrapper.classList.toggle('nav--open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close nav when a link is clicked (mobile)
+    document.querySelectorAll('.nav__link').forEach(link => {
+      link.addEventListener('click', () => {
+        wrapper.classList.remove('nav--open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
 
 </body>
 </html>
